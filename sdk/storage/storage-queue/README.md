@@ -167,6 +167,18 @@ The `QueueServiceClient` requires an URL to the queue service and an access cred
   ```
 
   [Note - Above steps are only for Node.js]
+  
+#### using connection string
+
+Alternatively, you can instantiate a `QueueServiceClient` using a connection string by using the `fromConnectionString` static method with the full connection string as argument. (The connection string can be obtained from the azure portal.)
+
+   ```javascript
+   const { QueueServiceClient } = require("@azure/storage-queue");
+   
+   const connStr = "<connection string>";
+   
+   const queueServiceClient = QueueServiceClient.fromConnectionString(connStr);
+   ```
 
 #### with `StorageSharedKeyCredential`
 
@@ -193,6 +205,8 @@ Alternatively, you instantiate a `QueueServiceClient` with a `StorageSharedKeyCr
     }
   );
   ```
+
+
 
 #### with SAS Token
 
